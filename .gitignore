@@ -70,3 +70,10 @@ Testing/
 
 # loaded Pytorch datasets
 data
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc

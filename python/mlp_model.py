@@ -72,6 +72,7 @@ def test(dataloader, model, loss_fn):
 
 
 if __name__ == "__main__":
+    #converts python PIL image to native pytorch tensor, before scaling
     transform = v2.Compose([v2.ToImage(), v2.ToDtype(torch.float32, scale=True)])
 
     train_data = datasets.MNIST(
@@ -103,5 +104,5 @@ if __name__ == "__main__":
 
     print("Done!")
 
-    torch.save(model.state_dict(), "mlp_model.pt")
-    print("Saved PyTorch model state to mlp_model.pt")
+    torch.save(model.state_dict(), "models/mlp_model.pt")
+    print("Saved PyTorch model state to models/mlp_model.pt")
