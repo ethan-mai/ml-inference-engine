@@ -19,7 +19,13 @@ FetchContent_Declare(
     GIT_TAG v1.15.2
 )
 
-FetchContent_MakeAvailable(nlohmann_json googletest)
+FetchContent_Declare(
+    libnpy
+    GIT_REPOSITORY https://github.com/llohse/libnpy.git
+    GIT_TAG v1.0.1
+)
+
+FetchContent_MakeAvailable(nlohmann_json googletest libnpy)
 
 enable_testing()
 
