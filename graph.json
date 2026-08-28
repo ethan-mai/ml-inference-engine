@@ -1,0 +1,108 @@
+{
+  "graph_inputs": [
+    {
+      "name": "golden_input",
+      "shape": [
+        1,
+        1,
+        28,
+        28
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "nodes": [
+    {
+      "op": "Linear",
+      "inputs": [
+        "golden_input",
+        "stack.0.weight",
+        "stack.0.bias"
+      ],
+      "output": "stack.0"
+    },
+    {
+      "op": "ReLU",
+      "inputs": [
+        "stack.0"
+      ],
+      "output": "stack.1"
+    },
+    {
+      "op": "Linear",
+      "inputs": [
+        "stack.1",
+        "stack.2.weight",
+        "stack.2.bias"
+      ],
+      "output": "stack.2"
+    },
+    {
+      "op": "ReLU",
+      "inputs": [
+        "stack.2"
+      ],
+      "output": "stack.3"
+    },
+    {
+      "op": "Linear",
+      "inputs": [
+        "stack.3",
+        "stack.4.weight",
+        "stack.4.bias"
+      ],
+      "output": "stack.4"
+    },
+    {
+      "op": "ReLU",
+      "inputs": [
+        "stack.4"
+      ],
+      "output": "stack.5"
+    },
+    {
+      "op": "Linear",
+      "inputs": [
+        "stack.5",
+        "stack.6.weight",
+        "stack.6.bias"
+      ],
+      "output": "stack.6"
+    },
+    {
+      "op": "ReLU",
+      "inputs": [
+        "stack.6"
+      ],
+      "output": "stack.7"
+    },
+    {
+      "op": "Linear",
+      "inputs": [
+        "stack.7",
+        "stack.8.weight",
+        "stack.8.bias"
+      ],
+      "output": "stack.8"
+    },
+    {
+      "op": "ReLU",
+      "inputs": [
+        "stack.8"
+      ],
+      "output": "stack.9"
+    },
+    {
+      "op": "Linear",
+      "inputs": [
+        "stack.9",
+        "stack.10.weight",
+        "stack.10.bias"
+      ],
+      "output": "stack.10"
+    }
+  ],
+  "outputs": [
+    "stack.10"
+  ]
+}
